@@ -1,0 +1,47 @@
+{% extends 'gturnos/plantilla-base.html' %}
+
+{% block titulo %}Administrar HISTORIAS CLINICAS{% endblock %}
+
+{% block page-header %}
+Administrar HISTORIAS CLINICAS
+{% endblock %}
+
+{% block principal %}	
+	<form method="POST" class="post-form">{% csrf_token %}
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+
+				<h3 class="panel-title">Lista de HISTORIAS CLINICAS</h3>
+				</div>	
+				<div class="panel-body">
+					
+
+					<table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Paciente</th>
+                                        <th>Diagnostico</th>
+                                        <th>Tratamiento</th>
+                                        <th>Fecha de Historia</th>
+                                        <th>Medico</th>                                      
+                                        <th>Editar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                	{% for his in hisTodas %}		
+					                <tr>
+                                        <td>{{his.paciente}}</td>
+                                        <td>{{his.diagnostico}}</td>
+                                        <td>{{his.tratamiento}}</td>
+                                        <td>{{his.fecha_historia}}</td>
+                                        <td>{{his.medico}}</td>
+                                        <td> <a href="{% url 'historia_edit' his.pk %}" class="btn btn-sm btn-primary">Editar</a></td>                                                   
+                                    </tr>                                   
+                                  	{% endfor %}
+                                </tbody>
+                            </table>
+				</div>
+		</div>
+		<a href="{% url 'historia_new'  %}" class="btn btn-sm btn-primary">Nueva</a>
+	</form>
+{% endblock %}

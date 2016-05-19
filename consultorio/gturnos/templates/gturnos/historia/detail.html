@@ -1,0 +1,21 @@
+{% extends 'gturnos/plantilla-base.html' %}
+
+{% block titulo %}Detalle de HISTORIAS{% endblock %}
+
+{% block principal %}
+	<h1>Detalles de HISTORIAS</h1>
+	<form method="POST" class="post-form">{% csrf_token %}
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title"> Detalle</h3>
+				</div>	
+				<div class="panel-body">
+					{{ his.diagnotico }}
+					{{ his.tratamiento }}
+					{{ his.fecha_historia }}
+					
+				</div>
+		</div>	
+		<button type="submit" class="save btn btn-default">GUARDAR</button>
+	</form>
+{% endblock %}

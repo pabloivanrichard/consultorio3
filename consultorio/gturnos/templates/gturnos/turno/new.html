@@ -1,0 +1,39 @@
+{% extends 'gturnos/plantilla-base.html' %}
+
+{% block titulo %}Nuevo Turno{% endblock %}
+
+{% block css %}
+
+
+{% endblock %}
+
+
+{% block javascript %}
+<!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+ <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script> 
+<script type="text/javascript">
+   $(function () {
+     $('#fecha').datetimepicker({
+       viewMode: 'years',
+       format: 'dd/mm/yyyy',
+       pickTime: 'True',
+       daysOfWeekDisabled: [0, 6]
+     });
+   });
+</script>-->
+{% endblock %}
+
+<!--Probando si a walter le gusta la porondonga!!!!!!!! El gordi se la COMUSIIII ( richard)-->
+
+
+{% block principal %}
+	<h1>Nuevo Turno</h1>
+	<form method="POST" class="post-form">{% csrf_token %}
+		{{ form.as_p}}
+		<button type="submit" class="save btn btn-primary">Guardar</button>
+	</form>
+{% endblock %}
+
+{% block jsFinal %}
+
+{% endblock %}

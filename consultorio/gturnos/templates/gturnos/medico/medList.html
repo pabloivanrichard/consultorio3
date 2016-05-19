@@ -1,0 +1,52 @@
+{% extends 'gturnos/plantilla-base.html' %}
+
+{% block titulo %}Administrar MEDICOS{% endblock %}
+
+{% block page-header %}
+Administrar MEDICOS
+{% endblock %}
+
+{% block principal %}	
+	<form method="POST" class="post-form">{% csrf_token %}
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">Lista de MEDICOS</h3>
+				</div>	
+				<div class="panel-body">
+					<table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>DNI</th>
+                                        <th>Apellido</th>
+                                        <th>Nombres</th>
+                                        <th>Domicilio</th>
+                                        <th>Sexo</th>
+                                        <th>Telefono</th>
+                                        <th>fecha Nac</th>                                        
+                                        <th>Matricula</th>  
+                                        <th>Organizacion</th>                                   
+                                        <th>Editar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                	{% for med in medTodos %}		
+					                <tr>
+                                        <td>{{med.dni}}</td>
+                                        <td>{{med.apellido}}</td>
+                                        <td>{{med.nombres}}</td>
+                                        <td>{{med.domicilio}}</td>
+                                        <td>{{med.sexo}}</td>
+                                        <td>{{med.telefono}}</td>
+                                        <td>{{med.fecha_nac}}</td>
+                                        <td>{{med.mat_profesional}}</td>
+                                        <td>{{med.organizaciones}}</td>
+                                        <td><a href="{% url 'medico_edit' med.pk %}" class="btn btn-sm btn-primary">Editar</a></td>                                                
+                                    </tr>                                   
+                                  	{% endfor %}
+                                </tbody>
+                            </table>
+				</div>
+		</div>	
+		<a href="{% url 'medico_new'  %}" class="btn btn-sm btn-primary">Nuevo</a>
+	</form>
+{% endblock %}

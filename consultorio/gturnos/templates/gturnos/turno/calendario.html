@@ -1,0 +1,64 @@
+{% extends 'gturnos/plantilla-base.html' %}
+
+{% block titulo %}Calendario{% endblock %}
+
+{% block css %}
+<link rel='stylesheet' href='/static/css/fullcalendar.css' />
+
+{% endblock %}
+
+
+{% block javascript %}
+<script src='/static/js/lib/jquery.min.js'></script>
+<script src='/static/js/lib/moment.min.js'></script>
+<script src='/static/js/fullcalendar.js'></script>
+<script src='/static/js/lang-all.js'></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      weekends: false,
+      lang: 'es'
+        // put your options and callbacks here
+    })
+
+});
+</script>
+
+<!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+ <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script> 
+<script type="text/javascript">
+   $(function () {
+     $('#fecha').datetimepicker({
+       viewMode: 'years',
+       format: 'dd/mm/yyyy',
+       pickTime: 'True',
+       daysOfWeekDisabled: [0, 6]
+     });
+   });
+</script>-->
+{% endblock %}
+
+{% block page-header %}
+  Calendario <small>Statistics Overview</small>
+{% endblock %}
+
+
+{% block principal %}
+
+
+
+
+<div id='calendar'></div>
+{% endblock %}
+
+{% block jsFinal %}
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'gturnos/plantilla-base.html' %}
+
+{% block titulo %}Nuevo PACIENTE{% endblock %}
+
+{% block principal %}
+	<h1>Nuevo PACIENTE</h1>
+	<form method="POST" class="post-form">{% csrf_token %}
+		{{ form.as_p}}
+		<button type="submit" class="save btn btn-default">GUARDAR</button>
+	</form>
+{% endblock %}

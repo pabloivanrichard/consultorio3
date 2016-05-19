@@ -1,0 +1,64 @@
+{% extends 'gturnos/plantilla-base.html' %}
+
+{% block titulo %}Administrar PACIENTES{% endblock %}
+
+{% block page-header %}
+Administrar PACIENTES
+{% endblock %}
+
+{% block principal %}	
+	<form method="POST" class="post-form">{% csrf_token %}
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+
+				<h3 class="panel-title">Lista de PACIENTES</h3>
+				</div>	
+				<div class="panel-body">
+					
+
+					<table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>DNI</th>
+                                        <th>Apellido</th>
+                                        <th>Nombres</th>
+                                        <th>Domicilio</th>
+                                        <th>Sexo</th>
+                                        <th>Telefono</th>
+                                        <th>fecha Nac</th>                                        
+                                        <th>altura</th>
+                                        <th>Peso</th>
+                                        <th>Per. Encefalico</th> 
+                                        <th>Fecha Inicio</th>                                       
+                                        <th>Editar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                	{% for pac in pacTodas %}		
+					                <tr>
+                                        <td>{{pac.dni}}</td>
+                                        <td>{{pac.apellido}}</td>
+                                        <td>{{pac.nombres}}</td>
+                                        <td>{{pac.domicilio}}</td>
+                                        <td>{{pac.sexo}}</td>
+                                        <td>{{pac.telefono}}</td>
+                                        <td>{{pac.fecha_nac}}</td>
+                                        <td>{{pac.altura}}</td>
+                                        <td>{{pac.peso}}</td>
+                                        <td>{{pac.perimetro_enc}}</td>
+                                        <td>{{pac.fecha_inicio}}</td>
+                                        <td> <a href="{% url 'paciente_edit' pac.pk %}" class="btn btn-sm btn-primary">Editar</a></td>                                                   
+                                    </tr>                                   
+                                  	{% endfor %}
+                                </tbody>
+                            </table>
+
+
+				</div>
+			
+			
+		</div>
+		
+		<a href="{% url 'paciente_new'  %}" class="btn btn-sm btn-primary">Nuevo</a>
+	</form>
+{% endblock %}

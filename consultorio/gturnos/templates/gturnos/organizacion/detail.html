@@ -1,0 +1,24 @@
+{% extends 'gturnos/plantilla-base.html' %}
+
+{% block titulo %}Detalle Organizacion{% endblock %}
+
+{% block principal %}
+	<h1>Detalle Organizacion</h1>
+	<form method="POST" class="post-form">{% csrf_token %}
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+
+				<h3 class="panel-title"> Detalle</h3>
+				</div>	
+				<div class="panel-body">
+					{{ org.nombre }}
+					{{ org.domicilio }}
+					{{ org.telefono }}
+				</div>
+			
+			
+		</div>
+		
+		<button type="submit" class="save btn btn-default">Save</button>
+	</form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'gturnos/plantilla-base.html' %}
+
+{% block titulo %}Detalle PACIENTE{% endblock %}
+
+{% block principal %}
+	<h1>Detalle PACIENTE</h1>
+	<form method="POST" class="post-form">{% csrf_token %}
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title"> Detalle</h3>
+				</div>	
+				<div class="panel-body">
+					{{ pac.dni }}
+					{{ pac.apellido }}
+					{{ pac.nombres }}
+					{{ pac.sexo }}
+					{{ pac.domicilio }}
+					{{ pac.telefono }}
+					{{ pac.fecha_nac }}
+					{{ pac.altura }}
+					{{ pac.peso }}
+					{{ pac.fecha_inicio }}										
+					{{ pac.perimetro_enc }}
+				</div>
+		</div>	
+		<button type="submit" class="save btn btn-default">GUARDAR</button>
+	</form>
+{% endblock %}
