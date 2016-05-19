@@ -14,7 +14,7 @@ urlpatterns = [
         # url(r'^persona/all/$', views.persona_all, name='persona_all'),
 
         #Turnos
-        url(r'^turno/new/$', views.turno_new, name='turno_new'),
+        url(r'^turno/new/$', turnoViews.turno_new, name='turno_new'),
 
         #Turnos
         url(r'^turno/calendario/$', turnoViews.turnos_calendario, name='calendario'),
