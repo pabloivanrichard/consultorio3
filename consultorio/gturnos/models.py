@@ -56,13 +56,6 @@ class Historia_medica(models.Model):
 	diagnostico = models.CharField(max_length=500)
 	tratamiento = models.CharField(max_length=500)
 
-class Organizacion(models.Model):
-	nombre = models.CharField(max_length=100)
-	domicilio = models.CharField(max_length=200)
-	telefono = models.CharField(max_length=15)
-	def __str__(self):
-		return self.nombre
-
 class Turno(models.Model):
 	medico = models.ForeignKey(Medico)
 	paciente = models.ForeignKey(Paciente)
