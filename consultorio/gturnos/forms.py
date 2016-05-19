@@ -76,3 +76,10 @@ class TurnoForm(forms.ModelForm):
 		
 		#}
 		#fecha = forms.DateField(widget=forms.SelectDateWidget())
+
+class buscadorForm(forms.ModelForm):
+	"""docstring for OrganizacionForm"""
+	#class Meta:
+	dni = forms.CharField(label=u'Documento')
+		#diagnostico=forms.CharField(widget=forms.Textarea)
+		#fields = ['fecha_historia','diagnostico','tratamiento','paciente','medico']

@@ -3,9 +3,34 @@ from django.views.generic.base import TemplateView
 from .forms import *
 
 #AGENTES
-def agentesPorDni(request):
-	turnosTodos = Turno.objects.all()
-	return render(request, 'gturnos/buscador/buscadorAgentes.html', {'agentes':agentes})
+# def pacientesPorDni(request):
+# 	if request.method == "GET":
+# 		try:
+# 	    	q = request.GET['dni']
+# 	        posts = Paciente.objects.filter(documento__search=q) #| \
+# 	                 #BlogPost.objects.filter(intro__search=q) | \
+# 	                 #BlogPost.objects.filter(content__search=q)
+# 	        return render_to_response(request, 'gturnos/selectores/buscadorPacientes.html', {'pacientes':pacientes})
+# 	    except KeyError:
+# 		#pacientes = Paciente.objects.all()
+# 			return render(request, 'gturnos/selectores/buscadorPacientes.html', {'form':form})
+# 			#return render(request, 'gturnos/selectores/buscadorPacientes.html', {'pacientes':pacientes})
+# 	else:		
+# 		form = buscadorForm()
+# 		return render(request, 'gturnos/selectores/buscadorPacientes.html', {'form':form})
+
+def pacientesPorDni(request):
+	if request.method == "POST":		
+	    q = request.GET['dni']
+	    posts = Paciente.objects.filter(documento__search=q) #| \
+	                 #BlogPost.objects.filter(intro__search=q) | \
+	                 #BlogPost.objects.filter(content__search=q)
+	    return render_to_response(request, 'gturnos/selectores/buscadorPacientes.html', {'pacientes':pacientes})			
+	else:		
+		form = buscadorForm()
+		return render(request, 'gturnos/selectores/buscadorPacientes.html', {'form':form})
+
+		#http://pythoncentral.io/how-to-use-python-django-forms/
 
 
 # def search(request):

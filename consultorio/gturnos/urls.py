@@ -1,5 +1,5 @@
 from django.conf.urls import include, url
-from . import views,turnoViews
+from . import views,turnoViews,buscadorViews
 
 urlpatterns = [
         url(r'^$', views.index),
@@ -34,4 +34,7 @@ urlpatterns = [
         url(r'^historia/(?P<pk>[0-9]+)/edit/$', views.historia_edit, name='historia_edit'),
         url(r'^historia/(?P<pk>[0-9]+)/$', views.historia_detail),
         url(r'^historia/all/$', views.historia_all, name='historia_all'),
+
+        #Selector
+        url(r'^selectores/buscar/$', buscadorViews.pacientesPorDni, name='buscar_paciente'),
     ]
