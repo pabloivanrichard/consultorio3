@@ -37,4 +37,8 @@ urlpatterns = [
 
         #Selector
         url(r'^selectores/buscar/$', buscadorViews.pacientesPorDni, name='buscar_paciente'),
+
+        #Probando PopUp
+        url(r'^selectores/popup/$', buscadorViews.popup, name='popup'),
+
     ]

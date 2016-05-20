@@ -25,3 +25,6 @@ def turno_detail(request, pk):
 def turno_all(request):
 	turnoTodos = Turno.objects.all()
 	return render(request, 'gturnos/turno/turnoList.html', {'turnoTodos':turnoTodos})
+
+
+
