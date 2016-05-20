@@ -63,7 +63,7 @@ class TurnoForm(forms.ModelForm):
 	"""docstring for OrganizacionForm"""
 	class Meta:
 		model = Turno		
-		fields = ('fecha_inicio','medico','paciente')
+		fields = ('fecha_inicio','fecha_fin','medico','paciente')
 		#medico = forms.ModelChoiceField(label=u'Categoría', queryset = Medico.objects.all(), widget=forms.TextInput(attrs={'class':'form-control'}))
 		#paciente = forms.ModelChoiceField(label=u'Categoría', queryset = Paciente.objects.all())
 		#fecha = models.DateTimeField(default=datetime.now, blank=True)
