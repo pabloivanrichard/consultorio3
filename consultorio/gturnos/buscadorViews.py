@@ -22,7 +22,7 @@ from .forms import *
 
 #------------------------------------------------------------------------------
 #esta funcion filtra los pacientes ya sea por documento, nombre y apellido
-#se pueden convinar
+#se pueden combinar
 def pacientesPorDni(request):
 	#pregunto si el metodo de envio de datos es POST(si se envian datos, si no devuelvo un formulario de busqueda vacio)
 	if request.method == "POST":	
@@ -33,7 +33,7 @@ def pacientesPorDni(request):
 	    #creo una lista vacia en caso de no encontrar ningun objeto
 	    pacientes = []
 
-	    #convino los filtros de busqueda teniendo en cuenta los campos que lleno el usuario en el fomrulario
+	    #combino los filtros de busqueda teniendo en cuenta los campos que lleno el usuario en el fomrulario
 	    if q:
 	    	pacientes = Paciente.objects.filter(dni=q) 	#| \
 	    	#		Paciente.objects.filter(nombres__icontains=q1) | \
@@ -64,7 +64,7 @@ def pacientesPorDni(request):
 
 	    #creo un nuevo formulario
 	    form = buscadorForm()
-	    #pregunto si hubo resultado en la busqueda, si no devulvo el formulario para realizar otra consulta
+	    #pregunto si hubo resultado en la busqueda, si no devuelvo el formulario para realizar otra consulta
 	    if len(pacientes) != 0:
 	    	
 	    	return render(request, 'gturnos/selectores/buscadorPacientes.html', {'pacientes':pacientes, 'form':form})			
@@ -97,3 +97,8 @@ def pacientesPorDni(request):
 #                    return HttpResponse("Solo Ajax");
 
 #  https://codigofacilito.com/articulos/como-crear-un-buscador-con-django
+
+def popup(request):
+	#turnoTodos = Turno.objects.all()
+	form = buscadorForm()
+	return render(request, 'gturnos/selectores/popup.html', {'form':form})
