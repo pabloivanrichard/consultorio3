@@ -15,15 +15,21 @@ Buscar PACIENTES
 
 
 
-		<div class="panel panel-primary">
-			<div class="panel-heading">
+		
+	</form>
 
-				<h3 class="panel-title">Lista de PACIENTES</h3>
-				</div>	
-				<div class="panel-body">
-					
 
-					<table class="table table-bordered table-hover">
+    
+
+    <div class="panel panel-primary">
+            <div class="panel-heading">
+
+                <h3 class="panel-title">Lista de PACIENTES</h3>
+                </div>  
+                <div class="panel-body">
+                    
+                {% if pacientes|length > 0 %}
+                    <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>DNI</th>
@@ -41,8 +47,8 @@ Buscar PACIENTES
                                     </tr>
                                 </thead>
                                 <tbody>
-                                	{% for pac in pacientes %}		
-					                <tr>
+                                    {% for pac in pacientes %}      
+                                    <tr>
                                         <td>{{pac.dni}}</td>
                                         <td>{{pac.apellido}}</td>
                                         <td>{{pac.nombres}}</td>
@@ -56,16 +62,21 @@ Buscar PACIENTES
                                         <td>{{pac.fecha_inicio}}</td>
                                         </td>                                                   
                                     </tr>                                   
-                                  	{% endfor %}
+                                    {% endfor %}
                                 </tbody>
-                            </table>
+                    </table>
+                    {% else %}
+
+                    <p> NO EXISTEN DATOS PARA MOSTRAR </p>
+
+                    {% endif %}
 
 
-				</div>
-			
-			
-		</div>
-		
-		<a href="{% url 'paciente_new'  %}" class="btn btn-sm btn-primary">Nuevo</a>
-	</form>
+                </div>
+            
+            
+        </div>
+
+        
+        <a href="{% url 'paciente_new'  %}" class="btn btn-sm btn-primary">Nuevo</a>
 {% endblock %}
