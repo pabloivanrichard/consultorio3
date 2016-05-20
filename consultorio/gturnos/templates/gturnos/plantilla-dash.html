@@ -26,7 +26,9 @@
     <!-- Custom Fonts -->
     <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    {% block javascript %}{% endblock %}
+    {% block javascript %}
+
+    {% endblock %}
   
 
 </head>
@@ -130,10 +132,10 @@
                     </ul>
                 </li> -->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Qno - Was <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Perfil </a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
@@ -143,7 +145,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Salir</a>
                         </li>
                     </ul>
                 </li>
@@ -170,13 +172,19 @@
                         <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Administracion <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="{% url 'organizacion_all' %}">Organizaciones</a>
                             </li>
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="{% url 'paciente_all' %}">Pacientes Cargados</a>
+                            </li>
+                             <li>
+                                <a href="{% url 'medico_all' %}">Medicos Disponibles</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'historia_all' %}">Historias Clinicas</a>
                             </li>
                         </ul>
                     </li>
@@ -308,6 +316,7 @@
                 
             
             {% block principal %}
+            
             {% endblock %}
               
 
