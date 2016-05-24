@@ -1,5 +1,6 @@
 from django.conf.urls import include, url
 from . import views,turnoViews,buscadorViews
+from django.views.generic import TemplateView
 
 urlpatterns = [
         url(r'^$', views.index),
@@ -40,5 +41,7 @@ urlpatterns = [
 
         #Probando PopUp
         url(r'^selectores/popup/$', buscadorViews.popup, name='popup'),
+
+        url(r'^foo/$', buscadorViews.prueba, name='prueba'),
 
     ]

@@ -14,24 +14,42 @@
 <script src='/static/js/fullcalendar.js'></script>
 <script src='/static/js/lang-all.js'></script>
 
-<script type="text/javascript">
-$(document).ready(function() {
+<script type='text/javascript'>
 
-    // page is now ready, initialize the calendar...
-
-    $('#calendar').fullCalendar({
-      header: {
+    $(document).ready(function() {
+    
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+        
+        $('#calendar').fullCalendar({
+            header: {
         left: 'prev,next today',
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
       },
-      weekends: false,
-      lang: 'es',
-      
-        // put your options and callbacks here
-    })
 
-});
+            editable: false,
+            weekends:false,
+            lang: 'es',
+            events: [
+            {% for registro in turnos %}
+                {
+                    title: '{{registro.paciente}}',
+                    allDay: false,
+                    start: new Date('{{ registro.fecha_inicio|date:"D d M Y" }} {{ registro.fecha_inicio|time:"H:i" }}'),
+                    end: new Date('{{ registro.fecha_fin|date:"D d M Y" }} {{ registro.fecha_fin|time:"H:i" }}'),
+                    duration: '00:10:00',
+                    color: '#3a87ad'            
+                                       
+                },
+            {% endfor %}           
+            ]
+        });
+        
+    });
+
 </script>
 
 <!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
