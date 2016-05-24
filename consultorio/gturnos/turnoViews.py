@@ -2,10 +2,11 @@
 from django.shortcuts import render,render_to_response,redirect,get_object_or_404
 from django.views.generic.base import TemplateView
 from .forms import *
+from datetime import *
 
 
 def turnos_calendario(request):
-	turnosTodos = Turno.objects.all()
+	turnosTodos = Turno.objects.all()	
 	return render(request, 'gturnos/turno/calendario.html', {'turnos':turnosTodos})
 
 def turno_new(request):
