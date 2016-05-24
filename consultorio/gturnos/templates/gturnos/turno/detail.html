@@ -4,7 +4,7 @@
 
 {% block principal %}
 	<h1>Detalle Organizacion</h1>
-	<form method="POST" class="post-form">{% csrf_token %}
+	
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 
@@ -20,6 +20,6 @@
 			
 		</div>
 		
-		<button type="submit" class="save btn btn-default">Save</button>
-	</form>
+		<a href="{% url 'calendario' %}" class="btn btn-sm btn-primary">Calendario</a>
+	
 {% endblock %}

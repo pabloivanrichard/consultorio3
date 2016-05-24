@@ -16,7 +16,7 @@
 
 		}
 		#overlay div {
- 	    width:300px;
+ 	    width:1000px;
     	margin: 100px auto;
      	background-color: #fff;
      	border:1px solid #000;
@@ -46,10 +46,65 @@
         	<button type="submit" class="save btn btn-primary">Buscar</button>
 	
 			</form>
+
+            <!-- <div class="panel panel-primary">
+                <div class="panel-heading">
+
+                    <h3 class="panel-title">Lista de PACIENTES</h3>
+                </div>  
+                <div class="panel-body">
+                    
+                    {% if pacientes|length > 0 %}
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>DNI</th>
+                                    <th>Apellido</th>
+                                    <th>Nombres</th>
+                                    <th>Domicilio</th>
+                                    <th>Sexo</th>
+                                    <th>Telefono</th>
+                                    <th>fecha Nac</th>                                        
+                                    <th>altura</th>
+                                    <th>Peso</th>
+                                    <th>Per. Encefalico</th> 
+                                    <th>Fecha Inicio</th>                                       
+                                       
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for pac in pacientes %}      
+                                    <tr>
+                                        <td>{{pac.dni}}</td>
+                                        <td>{{pac.apellido}}</td>
+                                        <td>{{pac.nombres}}</td>
+                                        <td>{{pac.domicilio}}</td>
+                                        <td>{{pac.sexo}}</td>
+                                        <td>{{pac.telefono}}</td>
+                                        <td>{{pac.fecha_nac}}</td>
+                                        <td>{{pac.altura}}</td>
+                                        <td>{{pac.peso}}</td>
+                                        <td>{{pac.perimetro_enc}}</td>
+                                        <td>{{pac.fecha_inicio}}</td>
+                                        </td>                                                   
+                                    </tr>                                   
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+
+                    <p> NO EXISTEN DATOS PARA MOSTRAR </p>
+
+                    {% endif %}
+
+                </div>
+            </div> -->
+  
+        
 			
      	</div>
 	</div>
-	<a href='#' onclick='overlay()'>Click here to show the overlay</a>
+	<a href='#' onclick='overlay()'>Presiona pa probar</a>
 	
 {% endblock %}
 
