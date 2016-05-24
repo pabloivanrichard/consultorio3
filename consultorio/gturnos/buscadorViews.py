@@ -102,3 +102,8 @@ def popup(request):
 	#turnoTodos = Turno.objects.all()
 	form = buscadorForm()
 	return render(request, 'gturnos/selectores/popup.html', {'form':form})
+
+def prueba(request):
+	#turnoTodos = Turno.objects.all()
+	#form = buscadorForm()
+	return render(request, 'gturnos/medico/prueba.html', {})
