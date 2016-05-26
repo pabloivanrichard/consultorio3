@@ -39,9 +39,14 @@ urlpatterns = [
         #Selector
         url(r'^selectores/buscar/$', buscadorViews.pacientesPorDni, name='buscar_paciente'),
 
+
         #Probando PopUp
         url(r'^selectores/popup/$', buscadorViews.popup, name='popup'),
 
         url(r'^foo/$', buscadorViews.prueba, name='prueba'),
+
+        url(r'^foo/$', TemplateView.as_view(template_name='gturnos/selectores/primera.html')),
+        url(r'^foo2/$', TemplateView.as_view(template_name='gturnos/selectores/segunda.html')),
+
 
     ]
