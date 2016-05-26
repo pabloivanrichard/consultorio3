@@ -1,5 +1,5 @@
 from django.conf.urls import include, url
-from . import views,turnoViews,buscadorViews
+from . import views,turnoViews,buscadorViews,selectoresViews
 from django.views.generic import TemplateView
 
 urlpatterns = [
@@ -40,5 +40,10 @@ urlpatterns = [
         url(r'^selectores/buscar/$', buscadorViews.pacientesPorDni, name='buscar_paciente'),
         url(r'^foo/$', TemplateView.as_view(template_name='gturnos/selectores/primera.html')),
         url(r'^foo2/$', TemplateView.as_view(template_name='gturnos/selectores/segunda.html')),
+
+        url(r'^buscarPaciente/$', selectoresViews.selectorPacientes, name='selector_paciente'),
+
+
+        url(r'^turno/nuevo/$', TemplateView.as_view(template_name='gturnos/turno/nuevoTurno.html')),
 
     ]
