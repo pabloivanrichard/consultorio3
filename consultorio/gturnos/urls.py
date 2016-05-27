@@ -48,12 +48,10 @@ urlpatterns = [
         url(r'^foo/$', TemplateView.as_view(template_name='gturnos/selectores/primera.html')),
         url(r'^foo2/$', TemplateView.as_view(template_name='gturnos/selectores/segunda.html')),
 
-<<<<<<< HEAD
-=======
         url(r'^buscarPaciente/$', selectoresViews.selectorPacientes, name='selector_paciente'),
 
 
         url(r'^turno/nuevo/$', TemplateView.as_view(template_name='gturnos/turno/nuevoTurno.html')),
->>>>>>> a71f7124adb954d73f533dfc71916cdad3a13c3c
+
 
     ]
