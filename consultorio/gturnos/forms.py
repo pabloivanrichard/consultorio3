@@ -85,3 +85,20 @@ class buscadorForm(forms.Form):
 	apellido = forms.CharField(label=u'Apellido')
 		#diagnostico=forms.CharField(widget=forms.Textarea)
 		#fields = ['fecha_historia','diagnostico','tratamiento','paciente','medico']
+
+
+class buscadorPacienteForm(forms.Form):
+	"""docstring for OrganizacionForm"""
+	#class Meta:
+	dni = forms.CharField(label=u'Documento')
+	nombre = forms.CharField(label=u'Nombre')
+	apellido = forms.CharField(label=u'Apellido')	
+
+# class nuevoTurnoForm(forms.Form):
+# 	"""docstring for OrganizacionForm"""
+# 	#class Meta:
+# 	fechaInicio = forms.CharField(label=u'Fecha y Hora de Inicio')
+# 	paciente = forms.CharField(label=u'Paciente')
+# 	medico = forms.CharField(label=u'Medico')
+# 	h_paciente = forms.CharField(widget=forms.HiddenInput())
+# 	h_medico = forms.CharField(widget=forms.HiddenInput())
