@@ -94,6 +94,20 @@ class buscadorPacienteForm(forms.Form):
 	nombre = forms.CharField(label=u'Nombre')
 	apellido = forms.CharField(label=u'Apellido')	
 
+class buscadorMedicoForm(forms.Form):
+	"""docstring for OrganizacionForm"""
+	#class Meta:
+	mat_profesional = forms.CharField(label=u'Matricula')
+	nombre = forms.CharField(label=u'Nombre')
+	apellido = forms.CharField(label=u'Apellido')
+
+
+class buscadorOrgForm(forms.Form):
+	"""docstring for OrganizacionForm"""
+	#class Meta:
+	nombre = forms.CharField(label=u'Nombre')
+	domicilio = forms.CharField(label=u'Domicilio')
+	telefono = forms.CharField(label=u'Telefono')
 # class nuevoTurnoForm(forms.Form):
 # 	"""docstring for OrganizacionForm"""
 # 	#class Meta:

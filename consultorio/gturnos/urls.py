@@ -49,9 +49,14 @@ urlpatterns = [
         url(r'^foo2/$', TemplateView.as_view(template_name='gturnos/selectores/segunda.html')),
 
         url(r'^buscarPaciente/$', selectoresViews.selectorPacientes, name='selector_paciente'),
+        url(r'^buscarMedico/$', selectoresViews.selectorMedicos, name='selector_medico'),
+        url(r'^buscarOrg/$', selectoresViews.selectorOrg, name='selector_org'),
 
-
+        
+        #url(r'^turno/nuevo/$', selectoresViews.selectorPaciente ,name='nuevoTurno'),
         url(r'^turno/nuevo/$', TemplateView.as_view(template_name='gturnos/turno/nuevoTurno.html')),
+
+        #url(r'^medico/nuevoMedico/$', nuevoMedico(template_name='gturnos/medico/nuevoMedico.html')),
 
 
     ]
