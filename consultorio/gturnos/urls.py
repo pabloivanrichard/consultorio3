@@ -38,12 +38,25 @@ urlpatterns = [
 
         #Selector
         url(r'^selectores/buscar/$', buscadorViews.pacientesPorDni, name='buscar_paciente'),
+
+
+        #Probando PopUp
+        url(r'^selectores/popup/$', buscadorViews.popup, name='popup'),
+
+        #url(r'^foo/$', buscadorViews.prueba, name='prueba'),
+
         url(r'^foo/$', TemplateView.as_view(template_name='gturnos/selectores/primera.html')),
         url(r'^foo2/$', TemplateView.as_view(template_name='gturnos/selectores/segunda.html')),
 
         url(r'^buscarPaciente/$', selectoresViews.selectorPacientes, name='selector_paciente'),
+        url(r'^buscarMedico/$', selectoresViews.selectorMedicos, name='selector_medico'),
+        url(r'^buscarOrg/$', selectoresViews.selectorOrg, name='selector_org'),
 
-
+        
+        #url(r'^turno/nuevo/$', selectoresViews.selectorPaciente ,name='nuevoTurno'),
         url(r'^turno/nuevo/$', TemplateView.as_view(template_name='gturnos/turno/nuevoTurno.html')),
+
+        #url(r'^medico/nuevoMedico/$', nuevoMedico(template_name='gturnos/medico/nuevoMedico.html')),
+
 
     ]

@@ -1,0 +1,49 @@
+{% extends 'gturnos/plantilla-base.html' %}
+
+{% block titulo %}Nuevo MEDICO{% endblock %}
+
+
+{% block css %}
+
+
+{% endblock %}
+
+
+{% block javascript %}
+
+<script> 
+var miPopup 
+function buscarOrg(){ 
+    miPopup = window.open("/buscarOrg","miwin","width=1000,height=800,scrollbars=yes") 
+    miPopup.focus() 
+} 
+</script>
+
+
+{% endblock %}
+
+
+{% block principal %}
+
+	<h1>Nuevo MEDICO</h1>
+
+<form name=formul>
+  
+  <div class="form-group">
+    <input type=text class="form-control" name=nombre value="'Nombre'" placeholder="nombre">
+    <label for="organizacion">Organizacion</label>
+    <!-- <input type=text name=paciente value="Seleccione el Paciente" size=25 maxlength=3> -->
+    <input type=text class="form-control" name=organizacion value="'Seleccione la Organizacion'" placeholder="organizacion">
+    <!-- <input type=text name=paciente value="Paciente" size=10 maxlength=3>  -->
+    <input type="hidden"  id="horganizacion" name="horganizacion">
+    <!-- <br></br> -->
+    <input type="Button" value="Buscar" onclick="buscarOrg()" class="save btn btn-primary">
+  </div>
+  <button type="submit" class="save btn btn-primary">Guardar</button>
+</form>
+ 
+{% endblock %}
+
+{% block jsFinal %}
+
+{% endblock %}

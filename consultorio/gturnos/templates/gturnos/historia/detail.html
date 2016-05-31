@@ -4,7 +4,7 @@
 
 {% block principal %}
 	<h1>Detalles de HISTORIAS</h1>
-	<form method="POST" class="post-form">{% csrf_token %}
+	
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title"> Detalle</h3>
@@ -16,6 +16,6 @@
 					
 				</div>
 		</div>	
-		<button type="submit" class="save btn btn-default">GUARDAR</button>
-	</form>
+		<a href="{% url 'historia_all' %}" class="btn btn-sm btn-primary">Listar</a>
+	
 {% endblock %}

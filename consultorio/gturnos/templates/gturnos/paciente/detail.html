@@ -4,7 +4,7 @@
 
 {% block principal %}
 	<h1>Detalle PACIENTE</h1>
-	<form method="POST" class="post-form">{% csrf_token %}
+	
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title"> Detalle</h3>
@@ -21,8 +21,10 @@
 					{{ pac.peso }}
 					{{ pac.fecha_inicio }}										
 					{{ pac.perimetro_enc }}
+					{{pac.sexo.descripcion}}
 				</div>
 		</div>	
-		<button type="submit" class="save btn btn-default">GUARDAR</button>
-	</form>
+		<a href="{% url 'paciente_all' %}" class="btn btn-sm btn-primary">Listar</a>
+	
+	
 {% endblock %}

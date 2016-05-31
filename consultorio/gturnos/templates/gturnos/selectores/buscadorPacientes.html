@@ -6,21 +6,17 @@
 Buscar PACIENTES
 {% endblock %}
 
+
 {% block principal %}
+
 	<form method="POST" class="post-form">{% csrf_token %}
 
         {{ form.as_p}}
+        <br></br>
         <button type="submit" class="save btn btn-primary">Buscar</button>
-
-
-
-
-		
+	
 	</form>
-
-
-    
-
+    <br></br>
     <div class="panel panel-primary">
             <div class="panel-heading">
 
@@ -78,5 +74,5 @@ Buscar PACIENTES
         </div>
 
         
-        <a href="{% url 'paciente_new'  %}" class="btn btn-sm btn-primary">Nuevo</a>
+        <a href="{% url 'paciente_new'  %}" class=" ">Nuevo</a>
 {% endblock %}
