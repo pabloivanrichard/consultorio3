@@ -34,26 +34,27 @@ function buscarMedico(){
 	<h1>Nuevo Turno</h1>
 
 <form name=formul>
+
   <div class="form-group">
     <label for="fechaInicio">Fecha Inicio</label>
-    <input type="text" class="form-control" id="fechaInicio" placeholder="fechaInicio">
+    <input type="text" class="form-control" id="Fecha Inicio" placeholder="fechaInicio">
   </div>  
+
   <div class="form-group">
     <label for="paciente">Paciente</label>
-    <!-- <input type=text name=paciente value="Seleccione el Paciente" size=25 maxlength=3> -->
     <input type=text class="form-control" name=paciente value="'Seleccione el Paciente'" placeholder="paciente">
-    <!-- <input type=text name=paciente value="Paciente" size=10 maxlength=3>  -->
-    <input type="hidden"  id="hpaciente" name="hpaciente">
-    <!-- <br></br> -->
     <input type="Button" value="Buscar" onclick="buscarPaciente()" class="save btn btn-primary">
   </div>
+
   <div class="form-group">
     <label for="medico">Medico</label>
     <input type="text" class="form-control" name=medico value="'Seleccione el Medico'" placeholder="medico">
     <input type="hidden"  id="hmedico" name="hmedico">
     <input type="Button" value="Buscar" onclick="buscarMedico()" class="save btn btn-primary">
   </div>
+
   <button type="submit" class="save btn btn-primary">Guardar</button>
+  
 </form>
  
 {% endblock %}

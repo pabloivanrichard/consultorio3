@@ -6,10 +6,9 @@
     <script> 
 
 function ponPrefijo(paciente,pk){ 
-   	// opener.document.formul.paciente.value = a
+   	
    	opener.document.formul.paciente.value = paciente
    	opener.document.formul.hpaciente.value = pk
-   	//document.getElementById("id_apellido").value = pref; 
    	window.close(); 
 } 
 </script> 
@@ -17,7 +16,7 @@ function ponPrefijo(paciente,pk){
 <body>
 <div class="panel panel-default">
   <div class="panel-body">	
-<!-- <input type="Button" value="+34" onclick="ponPrefijo('+34')">  -->
+
 <form method="POST" class="post-form">{% csrf_token %}
 
         {{ form.as_p}}

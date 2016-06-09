@@ -55,7 +55,7 @@ urlpatterns = [
         
         #url(r'^turno/nuevo/$', selectoresViews.selectorPaciente ,name='nuevoTurno'),
         url(r'^turno/nuevo/$', TemplateView.as_view(template_name='gturnos/turno/nuevoTurno.html')),
-
+        url(r'^medico/nuevo/$', TemplateView.as_view(template_name='gturnos/medico/nuevoMedico.html')),
         #url(r'^medico/nuevoMedico/$', nuevoMedico(template_name='gturnos/medico/nuevoMedico.html')),
 
 
