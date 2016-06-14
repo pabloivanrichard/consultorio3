@@ -21,15 +21,9 @@ class PacienteForm(forms.ModelForm):
 		widgets = {
 		'apellido': TextInput(attrs={'class':'form-control'}),
 		'nombres': TextInput(attrs={'class':'form-control'}),
-		#'fecha_nac':forms.DateInput(attrs={'class':'datepicker'}),
-		#'fecha_nac': DateWidget(attrs={'id':"fecha_nac"}, bootstrap_version=3),
-		#'fecha_nac': TextInput(attrs={'class':'form-control'}),
 		'domicilio': TextInput(attrs={'class':'form-control'}),
 		'telefono': TextInput(attrs={'class':'form-control'}),
 		'dni': TextInput(attrs={'class':'form-control'}),
-		#'sexo': TextInput(attrs={'class':'form-control'}),
-		#'fecha_inicio':forms.DateInput(attrs={'class':'datepicker'}),	
-		#'fecha_inicio': DateWidget(attrs={'id':"fecha_nac",'class':'form-control'},usel10n = True, bootstrap_version=3	),	
 		'altura': TextInput(attrs={'class':'form-control'}),
 		'peso': TextInput(attrs={'class':'form-control'}),
 		'perimetro_enc': TextInput(attrs={'class':'form-control'}),
@@ -43,11 +37,9 @@ class MedicoForm(forms.ModelForm):
 		widgets = {
 		'apellido': TextInput(attrs={'class':'form-control'}),
 		'nombres': TextInput(attrs={'class':'form-control'}),
-		#'fecha_nac': DateWidget(attrs={'id':"fecha_nac",'class':'form-control'},usel10n = True, bootstrap_version=3	),
 		'domicilio': TextInput(attrs={'class':'form-control'}),
 		'telefono': TextInput(attrs={'class':'form-control'}),
 		'dni': TextInput(attrs={'class':'form-control'}),
-		#'sexo': TextInput(attrs={'class':'form-control'}),
 		'mat_profesional': TextInput(attrs={'class':'form-control'}),
 		}
 

@@ -6,10 +6,9 @@
     <script> 
 
 function ponOrganizacion(organizacion,pk){ 
-   	// opener.document.formul.paciente.value = a
+   	
    	opener.document.formul.org.value = organizacion
-   	opener.document.formul.horg.value = pk
-   	//document.getElementById("id_apellido").value = pref; 
+   	opener.document.formul.horganizacion.value = pk	 
    	window.close(); 
 } 
 </script> 
@@ -38,9 +37,7 @@ function ponOrganizacion(organizacion,pk){
                                         <th>Nombre</th>
                                         <th>Domicilio</th>
                                         <th>Telefono</th>
-                                        <th>Selec</th>
-                                                                             
-                                       
+                                        <th>Selec</th>                             
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -59,13 +56,8 @@ function ponOrganizacion(organizacion,pk){
                     {% else %}
 
                     <p> NO EXISTEN DATOS PARA MOSTRAR </p>
-
                     {% endif %}
-
-
-                </div>
-            
-            
+                </div>      
         </div>
  </div>
 </div>
