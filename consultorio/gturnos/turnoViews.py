@@ -38,16 +38,12 @@ def turno_nuevo(request):
 		#form.fecha_inicio = request.POST['fechaInicio']
 		#form['fecha_inicio'] = datetime.now()
 		#form.fecha_fin = datetime.now()
+		duracion = request.POST['duracion']
 		fechaInicio = request.POST['fechaInicio']
-		fecha1 = datetime.date(request.POST['fechaInicio'])
-		hora1 = datetime.time(request.POST['horaInicio'])
-		#date_processing = fechaInicio.replace('T', '-').replace(':', '-').split('-')
-		#date_processing = [int(v) for v in date_processing]
-		#fecha = datetime.datetime(*date_processing)
-		fechaInicio = datetime.datetime.combine(fecha1, hora1)
-		#fecha = datetime.datetime(fechaInicio)
-		#fecha = datetime.fromtimestamp(fechaInicio)
-		#delta = datetime.timedelta(minutes=15)
+		i = str(fechaInicio)
+		dt_start = datetime.datetime.strptime(i, '%Y-%m-%dT%H:%M')
+		fechaFin = 	dt_start + timedelta(minutes=int(duracion))
+		
 		medico1 = request.POST['hmedico']
 		if len(medico1) == 0:
 			errores.append("Debe seleccionar un medico")
@@ -63,11 +59,12 @@ def turno_nuevo(request):
 			#return render(request, 'gturnos/turno/nuevoTurno.html', {'errores':errores})
 		else:
 			paciente1 = Paciente.objects.get(pk=request.POST['hpaciente'])
+
 		
 		if 	hayErrores:
-			return render(request, 'gturnos/turno/nuevoTurno.html', {'errores':errores,'fechaInicio':fechaInicio,'fecha':fecha})
+			return render(request, 'gturnos/turno/nuevoTurno.html', {'errores':errores,'fechaInicio':fechaInicio})
 		else: #datetime.now()
-			nuevoTurno = Turno(fecha_inicio=fechaInicio,fecha_fin = fechaInicio, medico = medico1,paciente = paciente1)
+			nuevoTurno = Turno(fecha_inicio=fechaInicio,fecha_fin = fechaFin, medico = medico1,paciente = paciente1)
 			nuevoTurno.save()
 			return redirect('turno_detail',pk=nuevoTurno.pk)
 		
