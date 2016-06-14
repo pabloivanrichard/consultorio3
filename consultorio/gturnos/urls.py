@@ -11,6 +11,7 @@ urlpatterns = [
 
         #Turnos
         url(r'^turno/new/$', turnoViews.turno_new, name='turno_new'),
+        url(r'^turno/(?P<pk>[0-9]+)/$', turnoViews.turno_detail,name='turno_detail'),
 
         #Turnos
         url(r'^turno/calendario/$', turnoViews.turnos_calendario, name='calendario'),
@@ -45,8 +46,14 @@ urlpatterns = [
         url(r'^buscarOrg/$', selectoresViews.selectorOrg, name='selector_org'),
         
         #url(r'^turno/nuevo/$', selectoresViews.selectorPaciente ,name='nuevoTurno'),
-        url(r'^turno/nuevo/$', TemplateView.as_view(template_name='gturnos/turno/nuevoTurno.html')),
+
+        #url(r'^turno/nuevo/$', TemplateView.as_view(template_name='gturnos/turno/nuevoTurno.html')),
         url(r'^medico/nuevo/$', TemplateView.as_view(template_name='gturnos/medico/nuevoMedico.html')),
+
+        url(r'^turno/nuevo/$', TemplateView.as_view(template_name='gturnos/turno/nuevoTurno.html'), name='nuevo_turno'),
+
+        url(r'^agregarTurno/$', turnoViews.turno_nuevo, name='agregarTurno'),
+
         #url(r'^medico/nuevoMedico/$', nuevoMedico(template_name='gturnos/medico/nuevoMedico.html')),
 
 
