@@ -26,6 +26,7 @@ Administrar MEDICOS
                                         <th>Matricula</th>  
                                         <th>Organizaciones</th>                                   
                                         <th>Editar</th>
+                                        <th>Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -40,7 +41,8 @@ Administrar MEDICOS
                                         <td>{{med.fecha_nac}}</td>
                                         <td>{{med.mat_profesional}}</td>
                                         <td>{{med.organizaciones}}</td>
-                                        <td><a href="{% url 'medico_edit' med.pk %}" class="btn btn-sm btn-primary">Editar</a></td>                                                
+                                        <td><a href="{% url 'medico_edit' med.pk %}" class="btn btn-sm btn-primary">Editar</a></td>   
+                                        <td> <a href="{% url 'medico_delete' med.pk %}" class="btn btn-sm btn-danger">Eliminar</a></td>                                             
                                     </tr>                                   
                                   	{% endfor %}
                                 </tbody>

@@ -31,6 +31,7 @@ Administrar PACIENTES
                                         <th>Per. Encefalico</th> 
                                         <th>Fecha Inicio</th>                                      
                                         <th>Editar</th>
+                                        <th>Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -47,18 +48,15 @@ Administrar PACIENTES
                                         <td>{{pac.peso}}</td>
                                         <td>{{pac.perimetro_enc}}</td>
                                         <td>{{pac.fecha_inicio}}</td>
-                                        <td> <a href="{% url 'paciente_edit' pac.pk %}" class="btn btn-sm btn-primary">Editar</a></td>                                                   
+                                        <td> <a href="{% url 'paciente_edit' pac.pk %}" class="btn btn-sm btn-primary">Editar</a></td>
+                                        <td> <a href="{% url 'paciente_delete' pac.pk %}" class="btn btn-sm btn-danger">Eliminar</a></td>                                                   
                                     </tr>                                   
                                   	{% endfor %}
                                 </tbody>
                             </table>
-
-
-				</div>
-			
-			
+				</div>		
 		</div>
 		
-		<a href="{% url 'paciente_new'  %}" class="btn btn-sm btn-primary">Nuevo</a>
+		<a href="{% url 'paciente_nuevo'  %}" class="btn btn-sm btn-primary">Nuevo</a>
 	</form>
 {% endblock %}

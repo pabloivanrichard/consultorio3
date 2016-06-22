@@ -72,7 +72,7 @@ class TurnoForm(forms.ModelForm):
 class buscadorForm(forms.Form):
 	"""docstring for OrganizacionForm"""
 	#class Meta:
-	dni = forms.CharField(label=u'Documento')
+	dni = forms.IntegerField(label=u'Documento')
 	nombre = forms.CharField(label=u'Nombre')
 	apellido = forms.CharField(label=u'Apellido')
 		#diagnostico=forms.CharField(widget=forms.Textarea)
@@ -82,14 +82,14 @@ class buscadorForm(forms.Form):
 class buscadorPacienteForm(forms.Form):
 	"""docstring for OrganizacionForm"""
 	#class Meta:
-	dni = forms.CharField(label=u'Documento')
+	dni = forms.IntegerField(label=u'Documento')
 	nombre = forms.CharField(label=u'Nombre')
 	apellido = forms.CharField(label=u'Apellido')	
 
 class buscadorMedicoForm(forms.Form):
 	"""docstring for OrganizacionForm"""
 	#class Meta:
-	mat_profesional = forms.CharField(label=u'Matricula')
+	mat_profesional = forms.IntegerField(label=u'Matricula')
 	nombre = forms.CharField(label=u'Nombre')
 	apellido = forms.CharField(label=u'Apellido')
 
@@ -99,7 +99,7 @@ class buscadorOrgForm(forms.Form):
 	#class Meta:
 	nombre = forms.CharField(label=u'Nombre')
 	domicilio = forms.CharField(label=u'Domicilio')
-	telefono = forms.CharField(label=u'Telefono')
+	telefono = forms.IntegerField(label=u'Telefono')
 # class nuevoTurnoForm(forms.Form):
 # 	"""docstring for OrganizacionForm"""
 # 	#class Meta:
