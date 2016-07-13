@@ -5,11 +5,10 @@
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <script> 
 
-function ponOrganizacion(org,pk){ 
-   	// opener.document.formul.paciente.value = a
+function ponOrganizacion(organizacion,pk){ 
+   	
    	opener.document.formul.org.value = organizacion
-   	opener.document.formul.horg.value = pk
-   	//document.getElementById("id_apellido").value = pref; 
+   	opener.document.formul.horganizacion.value = pk	 
    	window.close(); 
 } 
 </script> 
@@ -31,26 +30,22 @@ function ponOrganizacion(org,pk){
                 </div>  
                 <div class="panel-body">
                     
-                {% if organizacion|length > 0 %}
+                {% if organizaciones|length > 0 %}
                     <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>Nombre</th>
                                         <th>Domicilio</th>
                                         <th>Telefono</th>
-                                        <!-- <th>Domicilio</th> -->
-                                        <th>Selec</th>
-                                                                             
-                                       
+                                        <th>Selec</th>                             
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for org in organizacion %}      
+                                    {% for org in organizaciones %}      
                                     <tr>
                                         <td>{{org.nombre}}</td>
                                         <td>{{org.domicilio}}</td>
                                         <td>{{org.telefono}}</td>
-                                        <!-- <td>{{med.domicilio}}</td> -->
                                         <td><input type="Button" value="Elegir" onclick="ponOrganizacion('{{org.nombre}} {{org.domicilio}}','{{org.pk}}')"> </td>
                                    
                                         </td>                                                   
@@ -61,13 +56,8 @@ function ponOrganizacion(org,pk){
                     {% else %}
 
                     <p> NO EXISTEN DATOS PARA MOSTRAR </p>
-
                     {% endif %}
-
-
-                </div>
-            
-            
+                </div>      
         </div>
  </div>
 </div>

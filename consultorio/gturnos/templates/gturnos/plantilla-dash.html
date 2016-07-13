@@ -160,10 +160,28 @@
                         <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
                     </li>
                     <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Turnos</a>
+                        <a href="{% url 'calendario' %}"><i class="fa fa-fw fa-table"></i> Calendario</a>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Formularios</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i> Formularios <i class="fa fa-fw fa-edit"></i></a>
+                        <ul id="demo1" class="collapse">
+                            <li>
+                                <a href="{% url 'medico_nuevo' %}">Nuevo Medico</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'paciente_nuevo' %}">Nuevo Paciente</a>
+                            </li>
+                             <li>
+                                <a href="{% url 'organizacion_new' %}">Nueva Organizacion</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'historia_new' %}">Nueva Historia Clinica</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'nuevo_turno' %}">Nuevo Turno</a>
+                            </li>
+                        </ul>
+                        <!-- <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Formularios</a> -->
                     </li>
                     <li>
                         <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
