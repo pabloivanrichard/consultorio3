@@ -124,7 +124,7 @@ def selectorOrg(request):
 
 	    #combino los filtros de busqueda teniendo en cuenta los campos que lleno el usuario en el fomrulario
 	    if q:
-	    	organizaciones = Organizacion.objects.filter(nombre=q) 	#| \
+	    	organizaciones = Organizacion.objects.filter(nombre__icontains=q) 	#| \
 	    	#		Paciente.objects.filter(nombres__icontains=q1) | \
 	    	#		Paciente.objects.filter(apellido__icontains=q2)
 	    if q1:
@@ -133,20 +133,20 @@ def selectorOrg(request):
 	    if q2:
 	    	organizaciones = Organizacion.objects.filter(telefono__icontains=q2)	    
 	    if q and q1:
-	    	organizaciones = Organizacion.objects.filter(nombre=q)# 	| \
+	    	organizaciones = Organizacion.objects.filter(nombre__icontains=q)# 	| \
 	    	organizaciones = organizaciones.filter(domicilio__icontains=q1) #| \
 	    			#Paciente.objects.filter(apellido__icontains=q2)			
 	    if q and q2:
 	    	#pacientes = Paciente.objects.filter(dni=q) | \
 	    	#			Paciente.objects.filter(apellido__icontains=q2)
-	    	organizaciones = Organizacion.objects.filter(nombre=q)
+	    	organizaciones = Organizacion.objects.filter(nombre__icontains=q)
 	    	organizaciones = organizaciones.filter(telefono__icontains=q2)
 	    if q1 and q2:
 	    	organizaciones = Organizacion.objects.filter(domicilio__icontains=q1)# | \
 	    	organizaciones = organizaciones.filter(telefono__icontains=q2)
 	    				#Paciente.objects.filter(apellido__icontains=q2)
 	    if q and q1 and q2:
-	    	organizaciones = Organizacion.objects.filter(nombre=q)# 	| \
+	    	organizaciones = Organizacion.objects.filter(nombre__icontains=q)# 	| \
 	    	organizaciones = organizaciones.filter(domicilio__icontains=q1)# | \
 	    	organizaciones = organizaciones.filter(telefono__icontains=q2)
 	    
