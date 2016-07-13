@@ -22,7 +22,6 @@ class Persona(models.Model):
 
 class Especialidad(models.Model):
 	nombre = models.CharField(max_length=100)
-	# mat_especialidad = models.IntegerField()
 	def __str__(self):
 		return self.nombre
 
@@ -43,7 +42,6 @@ class Rel_Med_Esp(models.Model):
 	especialidad = models.ForeignKey(Especialidad)
 
 class Paciente(Persona):
-	#persona = models.ForeignKey(Personas)
 	fecha_inicio = models.DateField()
 	altura = models.IntegerField()
 	peso = models.IntegerField()

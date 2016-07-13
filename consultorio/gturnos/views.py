@@ -41,7 +41,7 @@ def organizacion_all(request):
 #Para arriba hizo walter tengo que editar 
 
 # MEDICOS
-def medico_new(request):
+def medico_nuevo(request):
 	if request.method == "POST":
 		form = MedicoForm(request.POST)
 		if form.is_valid():

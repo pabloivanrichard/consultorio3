@@ -21,15 +21,9 @@ class PacienteForm(forms.ModelForm):
 		widgets = {
 		'apellido': TextInput(attrs={'class':'form-control'}),
 		'nombres': TextInput(attrs={'class':'form-control'}),
-		#'fecha_nac':forms.DateInput(attrs={'class':'datepicker'}),
-		#'fecha_nac': DateWidget(attrs={'id':"fecha_nac"}, bootstrap_version=3),
-		#'fecha_nac': TextInput(attrs={'class':'form-control'}),
 		'domicilio': TextInput(attrs={'class':'form-control'}),
 		'telefono': TextInput(attrs={'class':'form-control'}),
 		'dni': TextInput(attrs={'class':'form-control'}),
-		#'sexo': TextInput(attrs={'class':'form-control'}),
-		#'fecha_inicio':forms.DateInput(attrs={'class':'datepicker'}),	
-		#'fecha_inicio': DateWidget(attrs={'id':"fecha_nac",'class':'form-control'},usel10n = True, bootstrap_version=3	),	
 		'altura': TextInput(attrs={'class':'form-control'}),
 		'peso': TextInput(attrs={'class':'form-control'}),
 		'perimetro_enc': TextInput(attrs={'class':'form-control'}),
@@ -43,11 +37,9 @@ class MedicoForm(forms.ModelForm):
 		widgets = {
 		'apellido': TextInput(attrs={'class':'form-control'}),
 		'nombres': TextInput(attrs={'class':'form-control'}),
-		#'fecha_nac': DateWidget(attrs={'id':"fecha_nac",'class':'form-control'},usel10n = True, bootstrap_version=3	),
 		'domicilio': TextInput(attrs={'class':'form-control'}),
 		'telefono': TextInput(attrs={'class':'form-control'}),
 		'dni': TextInput(attrs={'class':'form-control'}),
-		#'sexo': TextInput(attrs={'class':'form-control'}),
 		'mat_profesional': TextInput(attrs={'class':'form-control'}),
 		}
 
@@ -80,7 +72,7 @@ class TurnoForm(forms.ModelForm):
 class buscadorForm(forms.Form):
 	"""docstring for OrganizacionForm"""
 	#class Meta:
-	dni = forms.CharField(label=u'Documento')
+	dni = forms.IntegerField(label=u'Documento')
 	nombre = forms.CharField(label=u'Nombre')
 	apellido = forms.CharField(label=u'Apellido')
 		#diagnostico=forms.CharField(widget=forms.Textarea)
@@ -90,14 +82,14 @@ class buscadorForm(forms.Form):
 class buscadorPacienteForm(forms.Form):
 	"""docstring for OrganizacionForm"""
 	#class Meta:
-	dni = forms.CharField(label=u'Documento')
+	dni = forms.IntegerField(label=u'Documento')
 	nombre = forms.CharField(label=u'Nombre')
 	apellido = forms.CharField(label=u'Apellido')	
 
 class buscadorMedicoForm(forms.Form):
 	"""docstring for OrganizacionForm"""
 	#class Meta:
-	mat_profesional = forms.CharField(label=u'Matricula')
+	mat_profesional = forms.IntegerField(label=u'Matricula')
 	nombre = forms.CharField(label=u'Nombre')
 	apellido = forms.CharField(label=u'Apellido')
 
@@ -107,7 +99,7 @@ class buscadorOrgForm(forms.Form):
 	#class Meta:
 	nombre = forms.CharField(label=u'Nombre')
 	domicilio = forms.CharField(label=u'Domicilio')
-	telefono = forms.CharField(label=u'Telefono')
+	telefono = forms.IntegerField(label=u'Telefono')
 # class nuevoTurnoForm(forms.Form):
 # 	"""docstring for OrganizacionForm"""
 # 	#class Meta:
